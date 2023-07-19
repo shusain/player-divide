@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "ES6",
+    "noImplicitAny": false,
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "rootDir": "src/sketch",
+    "outDir": "build",
+    "sourceMap": true,
+    "target": "es5",
+    "moduleResolution": "node",
+  }
+}

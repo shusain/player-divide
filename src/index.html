@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="./sketch/sketch.ts" type="module"></script>
+    <style>
+      #canvasContainer {
+        margin-top: 20px;
+      }
+
+      #teamsContainer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+      }
+      #left-side-team, #right-side-team {
+        width: 50%;
+        text-align: center;
+        color: white;
+      }
+      #left-side-team div, #right-side-team div {
+        padding: 10px;
+        border: 1px solid gray;
+      }
+      #left-side-team {
+        background-color: green;
+      }
+
+      #right-side-team {
+        background-color: purple;
+      }
+      audio {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <audio controls id="stopWheelSound">
+    <source src="break-wood.mp3" type="audio/mp3">
+    </audio>
+    <audio controls id="spinSound">
+    <source src="hd-spin.mp3" type="audio/mp3">
+    </audio>
+    <textarea id="playerInput" type="text" placeholder="Enter Player Name"></textarea>
+    <br/>
+    <button id="addPlayer">Add Player</button>
+    <button id="accelerateButton">Spin</button>
+    <button id="stopButton">Stop</button>
+    <button id="clearWheel">Clear</button>
+    <div id="canvasContainer"></div>
+
+    <div id="teamsContainer">
+      <div id="left-side-team">Team 1</div>
+      <div id="right-side-team">Team 2</div>
+    </div>
+  </body>
+</html>

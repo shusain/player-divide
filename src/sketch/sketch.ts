@@ -9,7 +9,7 @@ const sketchFunction = (s: p5) => {
 
 
   s.setup = () => {
-    let canvas = s.createCanvas(1024, 768);
+    let canvas = s.createCanvas(768, 768);
     canvas.parent('canvasContainer');
 
     disc = new Disc(s);
@@ -43,7 +43,7 @@ const sketchFunction = (s: p5) => {
 
 
     }
-    players = ["Eric", "Shaun", "Jonathan", "Kim", "Justin", "Nick", "Emily"]
+    players = ["Eric", "Shaun", "Jonathan", "Kim", "Justin", "Nick", "Emily", "Bob", "Frank"]
     players.forEach(player => disc.addPlayer(player));
 
     document.getElementById("playerInput").addEventListener("keyup", (event) => {
@@ -211,7 +211,7 @@ class PlayerWedge {
 
     // Rotate and draw the text
     s.rotate(this.startAngle + this.angle / 2);
-    s.translate(100, 0); // Modify this value to adjust the distance of the text from the center of the wedge
+    s.translate(100, 7); // Modify this value to adjust the distance of the text from the center of the wedge
     s.textAlign(s.CENTER);
 
     // calculate brightness

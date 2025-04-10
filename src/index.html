@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
     <script src="./sketch/sketch.ts" type="module"></script>
+    <meta name="viewport" content="width=768">
     <style>
+      #pageContainer {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+      }
       #canvasContainer {
         margin-top: 20px;
       }
@@ -11,7 +18,7 @@
       #teamsContainer {
         display: flex;
         flex-direction: row;
-        width: 100%;
+        width: 768px;
       }
       #left-side-team, #right-side-team {
         width: 50%;
@@ -34,33 +41,52 @@
       }
       button {
         padding:10px;
-        font-size:2.5rem;
-        width:20%;
+        font-size:1.5rem;
+        width: calc(768/4);
+        height: 50px;
+        font-family: 'Courier New', Courier, monospace;
+        background-color: white;
       }
       textarea {
-        width: 200px;
+        width: 768px;
         height: 140px;
+      }
+      .details {
+        font-size: .5rem;
+      }
+      .flex {
+        display: flex;
+        width: 768px;
       }
     </style>
   </head>
   <body>
     <audio controls id="stopWheelSound">
-    <source src="break-wood.mp3" type="audio/mp3">
+    <source src="shatter.wav" type="audio/wav">
     </audio>
     <audio controls id="spinSound">
     <source src="hd-spin.mp3" type="audio/mp3">
     </audio>
-    <textarea id="playerInput" type="text" placeholder="Enter Player Name"></textarea>
-    <br/>
-    <button id="addPlayer">Add Player</button>
-    <button id="accelerateButton">Spin</button>
-    <button id="stopButton">Stop</button>
-    <button id="clearWheel">Clear</button>
-    <div id="canvasContainer"></div>
 
-    <div id="teamsContainer">
-      <div id="left-side-team">Team 1</div>
-      <div id="right-side-team">Team 2</div>
+    <div id="pageContainer">
+      <textarea id="playerInput" type="text" placeholder="Enter Player Name"></textarea>
+      <br/>
+  
+      <div class="flex">
+        <button id="addPlayer">Add Player</button>
+        <button id="accelerateButton">Spin<div class="details">Multiple clicks to accelerate</div></button>
+        <button id="stopButton">Stop</button>
+        <button id="clearWheel">Clear</button>
+      </div>
+  
+      <div id="canvasContainer"></div>
+  
+      <div id="teamsContainer">
+        <div id="left-side-team">Team 1</div>
+        <div id="right-side-team">Team 2</div>
+      </div>
     </div>
+
+    
   </body>
 </html>
